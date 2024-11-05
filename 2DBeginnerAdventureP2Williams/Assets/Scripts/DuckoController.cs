@@ -23,14 +23,14 @@ public class DuckoController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-
-        void FixedUpdate()
-        {
-            Vector2 position = transform.position;
-            position.x = position.x + 3.0f * horizontal * Time.deltaTime;
-            position.y = position.y + 3.0f * vertical * Time.deltaTime;
-
-            rigidbody2d.MovePosition(position);
-        }
     }
+    void FixedUpdate()
+    {
+        Vector2 position = transform.position;
+        position.x = position.x + 3.0f * horizontal * Time.deltaTime;
+        position.y = position.y + 3.0f * vertical * Time.deltaTime;
+
+        rigidbody2d.MovePosition(position);
+    }
+}
 

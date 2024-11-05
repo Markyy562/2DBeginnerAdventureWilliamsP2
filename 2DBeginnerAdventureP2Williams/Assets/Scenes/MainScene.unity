@@ -273,7 +273,7 @@ SpriteRenderer:
   m_Size: {x: 1.68, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &170627740
@@ -420,6 +420,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &604627661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2039127897225829650, guid: b48df24e54d227f4d9fdd26f59c81d3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4662733311540126446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &604627665
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604627661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.20849472, y: -0.2984764}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.31, y: 0.98}
+    newSize: {x: 1.31, y: 0.98}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.852818, y: 0.38304722}
+  m_EdgeRadius: 0
 --- !u!1 &606199373
 GameObject:
   m_ObjectHideFlags: 0
@@ -23415,8 +23466,8 @@ Transform:
   m_GameObject: {fileID: 1031341542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.82, y: -10.98, z: 0}
-  m_LocalScale: {x: 2.9410284, y: 3.7101696, z: 1}
+  m_LocalPosition: {x: -4.82, y: -11.1316, z: 0}
+  m_LocalScale: {x: 2.9410284, y: 3.868223, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -23952,8 +24003,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5800583772314962923, guid: 7d0bbb75604fc2542a43a6bf3ff491af, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d0bbb75604fc2542a43a6bf3ff491af, type: 3}
@@ -24309,22 +24359,22 @@ PrefabInstance:
     - target: {fileID: 2826786331019770027, guid: b48df24e54d227f4d9fdd26f59c81d3f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7185234
+      value: 1.4845341
       objectReference: {fileID: 0}
     - target: {fileID: 2826786331019770027, guid: b48df24e54d227f4d9fdd26f59c81d3f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6936429
+      value: 1.5679828
       objectReference: {fileID: 0}
     - target: {fileID: 2826786331019770027, guid: b48df24e54d227f4d9fdd26f59c81d3f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6044
+      value: -6.7551
       objectReference: {fileID: 0}
     - target: {fileID: 2826786331019770027, guid: b48df24e54d227f4d9fdd26f59c81d3f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9569
+      value: -2.8771
       objectReference: {fileID: 0}
     - target: {fileID: 2826786331019770027, guid: b48df24e54d227f4d9fdd26f59c81d3f,
         type: 3}
@@ -24369,7 +24419,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2039127897225829650, guid: b48df24e54d227f4d9fdd26f59c81d3f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 604627665}
   m_SourcePrefab: {fileID: 100100000, guid: b48df24e54d227f4d9fdd26f59c81d3f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
