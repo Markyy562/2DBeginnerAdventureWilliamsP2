@@ -37,13 +37,21 @@ public class EnemyController : MonoBehaviour
         Vector2 position = rigidbody2d.position;
         if (vertical)
         {
-            position.x += position.x + Time.deltaTime * speed * direction;
+            position.y = position.y + Time.deltaTime * speed * direction;
         }
         else
         {
-            position.x += position.x + Time.deltaTime * speed * direction;
+            position.x = position.x + Time.deltaTime * speed * direction;
         }
 
         rigidbody2d.MovePosition(position);
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        DuckoController player = other.gameObject.GetComponent<DuckoController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 }
