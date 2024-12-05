@@ -7,8 +7,13 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class DuckoController : MonoBehaviour
 {
     public float speed = 3.0f;
+   
     public int maxHealth = 5;
+   
+    public GameObject projectilePrefab;
+    
     public float timeInvincible = 2;
+   
     public int currentHealth;
 
     bool isInvincible;
