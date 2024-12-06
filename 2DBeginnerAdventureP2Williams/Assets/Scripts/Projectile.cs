@@ -25,8 +25,10 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Projectile Collision with " + other.gameObject);
-        Destroy(gameObject);
+        DuckoController player = other.gameObject.GetComponent<DuckoController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1)
     }
 }
 

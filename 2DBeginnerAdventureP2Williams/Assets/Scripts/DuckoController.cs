@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.WSA;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class DuckoController : MonoBehaviour
 {
     public float speed = 3.0f;
-   
+
     public int maxHealth = 5;
-   
+
     public GameObject projectilePrefab;
-    
+
     public float timeInvincible = 2;
-   
+
     public int currentHealth;
 
     bool isInvincible;
@@ -26,14 +27,14 @@ public class DuckoController : MonoBehaviour
     float vertical;
 
     Animator animator;
-    Vector2 lookDirection = new Vector2(1,0);
+    Vector2 lookDirection = new Vector2(1, 0);
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-       animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
 
 
@@ -58,7 +59,7 @@ public class DuckoController : MonoBehaviour
         animator.SetFloat("Look X", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
-      
+
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
@@ -67,28 +68,48 @@ public class DuckoController : MonoBehaviour
                 isInvincible = false;
             }
         }
-    }
-    void FixedUpdate()
-    {
-        Vector2 position = transform.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
-
-        rigidbody2d.MovePosition(position);
-    }
-
-    public void ChangeHealth(int amount)
-    {
-        if (amount < 0)
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if (isInvincible)
-            {
-                return;
-            }
-            isInvincible = true;
-            invincibleTimer = timeInvincible;
+            Lanuch();
         }
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
     }
-}
+    
+
+         
+            void FixedUpdate()
+            {
+                Vector2 position = transform.position;
+                position.x = position.x + speed * horizontal * Time.deltaTime;
+                position.y = position.y + speed * vertical * Time.deltaTime;
+
+                rigidbody2d.MovePosition(position);
+            }
+            public void ChangeHealth(int amount)
+            {
+                if (amount < 0)
+                {
+                    if (isInvincible)
+                    {
+                        return;
+                    }
+                    isInvincible = true;
+                    invincibleTimer = timeInvincible;
+                }
+                currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+                Debug.Log(currentHealth + "/" + maxHealth);
+            }
+
+            void Lanuch()
+            {
+                GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+                Projectile projectile = projectileObject.GetComponent<Projectile>();
+                projectile.Launch(lookDirection, 300);
+
+                animator.SetTrigger("launch");
+            }
+        }
+    
+
+
+
